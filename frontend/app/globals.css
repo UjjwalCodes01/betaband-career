@@ -1,0 +1,188 @@
+@import "tailwindcss";
+
+:root {
+  --white:      #F8F8F7;
+  --steel:      #3D5476;
+  --charcoal:   #232327;
+  --muted-blue: #5C6F8C;
+  --slate:      #4B596E;
+  --light-gray: #9DA3AC;
+  --soft-blue:  #75859E;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  background-color: var(--white);
+  color: var(--charcoal);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--white); }
+::-webkit-scrollbar-thumb { background: var(--light-gray); border-radius: 2px; }
+
+/* Animations */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.anim-fade-up { animation: fadeUp 0.5s ease forwards; }
+
+/* Cards */
+.card {
+  background: var(--white);
+  border: 1px solid #E2E4E8;
+  border-radius: 12px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.card:hover {
+  border-color: var(--soft-blue);
+  box-shadow: 0 4px 20px rgba(61,84,118,0.08);
+}
+
+/* Primary button */
+.btn {
+  background: var(--charcoal);
+  color: var(--white);
+  border: none;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  transition: background 0.2s, transform 0.15s;
+  text-decoration: none;
+}
+.btn:hover { background: var(--steel); transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+
+/* Outline button */
+.btn-outline {
+  background: transparent;
+  border: 1.5px solid #D1D5DB;
+  color: var(--charcoal);
+  padding: 9px 20px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  transition: border-color 0.2s, background 0.2s;
+  text-decoration: none;
+}
+.btn-outline:hover {
+  border-color: var(--steel);
+  background: rgba(61,84,118,0.05);
+  color: var(--steel);
+}
+
+/* Ghost button */
+.btn-ghost {
+  background: transparent;
+  border: none;
+  color: var(--muted-blue);
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.15s, color 0.15s;
+  text-decoration: none;
+}
+.btn-ghost:hover { background: rgba(61,84,118,0.06); color: var(--steel); }
+
+/* Inputs */
+.input {
+  background: var(--white);
+  border: 1.5px solid #D1D5DB;
+  border-radius: 8px;
+  color: var(--charcoal);
+  padding: 10px 14px;
+  width: 100%;
+  font-size: 14px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+.input:focus {
+  border-color: var(--steel);
+  box-shadow: 0 0 0 3px rgba(61,84,118,0.1);
+}
+.input::placeholder { color: var(--light-gray); }
+
+/* Label */
+.label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--slate);
+  margin-bottom: 6px;
+  letter-spacing: 0.01em;
+}
+
+/* Badge */
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.badge-steel  { background: rgba(61,84,118,0.1);  color: var(--steel);  }
+.badge-muted  { background: rgba(92,111,140,0.1); color: var(--muted-blue); }
+.badge-gray   { background: #F0F1F3;               color: var(--light-gray); }
+
+/* Divider */
+.divider {
+  height: 1px;
+  background: #E8EAED;
+}
+
+/* Verified / Invalid frames */
+.verified-frame {
+  background: #EBF5F1;
+  border: 1.5px solid #7AC7A6;
+  border-radius: 14px;
+}
+.invalid-frame {
+  background: #FEF2F2;
+  border: 1.5px solid #FCA5A5;
+  border-radius: 14px;
+}
+
+/* Certificate decoration */
+.cert-card {
+  background: var(--white);
+  border: 1.5px solid #D1D5DB;
+  border-radius: 14px;
+  position: relative;
+  overflow: hidden;
+}
+.cert-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--steel), var(--soft-blue));
+}
+
+/* Section label */
+.section-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--light-gray);
+}
