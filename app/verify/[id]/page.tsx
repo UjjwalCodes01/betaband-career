@@ -1,6 +1,7 @@
 import { prisma } from "@/lib/prisma";
 import { CheckCircle2, XCircle, Award, Shield } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 interface Props {
@@ -43,14 +44,11 @@ export default async function VerifyCertPage({ params }: Props) {
             <div className="cert-card p-6 sm:p-8 mb-5">
               {/* Top bar */}
               <div className="flex items-center justify-between mb-6">
-                <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-md flex items-center justify-center text-[#F8F8F7] font-black text-xs"
-                    style={{ background: "#3D5476" }}>
-                    BB
-                  </div>
+                <div className="flex items-center gap-3">
+                  <Image src="/logo.png" alt="BeatBand Logo" width={100} height={24} className="h-6 w-auto object-contain" />
+                  <div className="w-px h-6 bg-[#E8EAED]" />
                   <div>
-                    <p className="font-bold text-[13px]" style={{ color: "#232327" }}>BeatBand™</p>
-                    <p className="text-[11px]" style={{ color: "#9DA3AC" }}>Certificate of Recognition</p>
+                    <p className="font-bold text-[13px]" style={{ color: "#232327" }}>Certificate of Recognition</p>
                   </div>
                 </div>
                 <Award size={24} style={{ color: "#3D5476" }} />

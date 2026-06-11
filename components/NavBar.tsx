@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
@@ -16,16 +17,8 @@ export function NavBar() {
       <nav className="max-w-5xl mx-auto px-5 sm:px-8 h-14 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2.5">
-          <div
-            className="w-7 h-7 rounded-md flex items-center justify-center text-[#F8F8F7] font-black text-xs"
-            style={{ background: "#3D5476" }}
-          >
-            BB
-          </div>
-          <span className="font-bold text-[#232327] text-sm tracking-tight">
-            BeatBand<span className="text-[#3D5476]">™</span>
-            <span className="text-[#9DA3AC] font-normal ml-1.5 hidden sm:inline">Careers</span>
-          </span>
+          <Image src="/logo.png" alt="BeatBand Logo" width={140} height={32} className="h-8 w-auto object-contain" />
+          <span className="text-[#9DA3AC] font-normal hidden sm:inline text-sm">Careers</span>
         </Link>
 
         {/* Desktop */}
